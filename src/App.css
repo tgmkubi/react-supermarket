@@ -1,0 +1,120 @@
+/* Header.jsx */
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #53435B;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+nav {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-logo img {
+  width: 200px; /* Örnek bir genişlik, ihtiyacınıza göre ayarlayın */
+  border-radius: 10px;
+}
+
+.main-button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #FBEDE1;
+  color: #53435B;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+#cart-dialog {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  background-color: #FBEDE1;
+  animation: fadeIn 0.5s ease-in-out, circleExpand 0.5s ease-in-out; /* Animasyon ekleyin */
+}
+
+/* Products.jsx */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Her sütunun minimum genişliği 300px, maksimum genişlik ise 1 fr (bir fraksiyon) */
+  gap: 20px; /* Elemanlar arasına 20px boşluk bırak */
+  width: 80%;
+  margin: 8rem auto 2rem;
+}
+
+/* Product.jsx */
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 100%; /* Öğe, üst öğe içinde genişleyebilir */
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out, circleExpand 0.5s ease-in-out; /* İki animasyonu birleştirin */
+  transition: transform 0.3s ease-in-out; /* Hover durumunda transform özelliğine geçiş efekti ekleme */
+}
+
+.product:hover {
+  transform: scale(1.05);
+  z-index: 5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes circleExpand {
+  from {
+    transform: scale(0.9); /* Çemberin başlangıç ölçeği (0.5 = yarı çap) */
+  }
+  to {
+    transform: scale(1); /* Çemberin bitiş ölçeği (1 = tam çap) */
+  }
+}
+
+.product-content {
+  flex: 1;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-button {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #53435B;
+  color: #FBEDE1;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-button:hover {
+  background-color: #987da6;
+}
